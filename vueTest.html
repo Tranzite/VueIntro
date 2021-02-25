@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+
+    <ul>
+
+        <li v-for="item in items">{{ item }}</li>
+    </ul>
+
+    <input id="input" type="text" v-model="newItem">
+
+    <button v-on:click="addItem">Add To do Item</button>
+</div>
+
+<script>
+    var app = new Vue({
+        el:'#app',
+        data : {
+            items :['add milk','add sugar','add tea powder','add vanila']
+        },
+
+        methods:{
+
+            addItem() {
+                this.items.push(this.newItem);
+                this.newItem ='';
+            }
+
+        }
+
+
+    })
+
+</script>
+    
+</div>
+</body>
+</html>
